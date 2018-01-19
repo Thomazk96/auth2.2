@@ -1,0 +1,9 @@
+{% extends 'core/base.html' %}
+{% block title %}Painel{% endblock %}
+{% load staticfiles %}
+{% block content %}
+<h1 class="page-header">Seja Bem Vindo, <b> {{user.username}} </b> </h1>
+{% endblock %}
+{% block styles %}
+<link href="{% static 'css/style.css' %}" rel="stylesheet" >
+{% endblock %}

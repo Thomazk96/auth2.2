@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+{% block title %}Adicionar Campus{% endblock %}
+{% load staticfiles %}
+{% block content %}
+<form method="POST" class="container">
+    {% csrf_token %}
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="col-md-12 form-group">
+                <label>Nome</label>
+                <input type="text" name="name" class="form-control" value="">
+                <span style="color:red; text-decoration:none">{{form.errors.name}}</span>
+            </div>
+
+            <!--<div class="col-md-6 form-group">
+                <label>Nome (slug)</label>
+                <input type="text" name="short_name" class="form-control" value="">
+            </div>
+            <div class="col-md-12 form-group">
+                <label>Nome</label>
+                <input type="text" name="name" class="form-control" value="">
+            </div>-->
+                            
+        </div>
+
+        <div class="panel-footer">
+            <button type="submit" class="btn btn-default">Adicionar</button>
+        </div>
+    </div>        
+    
+</form>
+{% endblock %}

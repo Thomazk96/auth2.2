@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+{% block title %}Professores{% endblock %}
+{% load staticfiles %}
+{% block content %}
+	<p><a href="/professores/novo" class="btn btn-default">Adicionar Professor</a></p>
+	<table class="table table-bordered">
+		<thead>
+			<th>Nome</th>
+			<th>Email</th>
+			<th>Curso</th>
+		</thead>
+
+		<tbody>
+			{% for p in professors %}
+			    <tr>
+			    	<td>{{ p.name }}</td>
+			    	<td></td>
+			    	<td></td>
+			    </tr>
+			{% empty %}
+			    <tr>
+			    	<td colspan="3" class="text-center">Sorry, no professor in this list.</td>
+			    </tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}
